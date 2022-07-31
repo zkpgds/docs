@@ -50,5 +50,6 @@ jobs:
       - name: Deploy Docs
         run: |
           source venv/bin/activate
-          python main.py ${{ secrets.D_T }} ${{ github.repository }}
+          python main.py
+#          python main.py ${{ secrets.D_T }} ${{ github.repository }}
 
