@@ -30,7 +30,7 @@ def main(token, repo_name, self):
     print("===============")
     print(token)
     print(repo_name)
-    print("===============")
+    print("===================")
     user = login(token)
     me = get_me(user)
     repo = get_repo(user, repo_name)
