@@ -1,0 +1,44 @@
+# -*- coding:utf-8 -*-
+import os
+import time
+import datetime
+import shutil
+import argparse
+
+from github import Github
+
+print("-" * 50)
+print("now: ", datetime.datetime.now().strftime('%Y-%M-%d %H:%M:%S'))
+print("-" * 50)
+
+def get_me(user):
+    return user.get_user().login
+
+
+def login(token):
+    return Github(token)
+
+
+def get_repo(user: Github, repo: str):
+    return user.get_repo(repo)
+
+
+def main(token, repo_name):
+    print("===============")
+    print(token)
+    print(repo_name)
+    print("===============")
+    user = login(token)
+    me = get_me(user)
+    repo = get_repo(user, repo_name)
+    print("done~")
+    print(repo)
+
+if __name__ == "__main__":
+    if not os.path.exists(BACKUP_DIR):
+        os.mkdir(BACKUP_DIR)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("github_token", help="github_token")
+    parser.add_argument("repo_name", help="repo_name")
+    options = parser.parse_args()
+    main(options.github_token, options.repo_name)
