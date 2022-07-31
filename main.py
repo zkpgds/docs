@@ -40,7 +40,6 @@ def main(token, repo_name):
 #     if r != 0:
 #         raise Exception("deploy fail")
 #     print("done~")
-    print(repo.repo_name)
     print(repo.name)
 
 if __name__ == "__main__":
