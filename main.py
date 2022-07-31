@@ -34,13 +34,14 @@ def main(token, repo_name):
     user = login(token)
     me = get_me(user)
     repo = get_repo(user, repo_name)
-    cmd_str = "cd " + os.path.join(os.path.dirname(os.path.abspath(__file__)), 'repo') + " && bundle install && ./deploy.sh"
-    print(cmd_str)
-    r = os.system(cmd_str)
-    if r != 0:
-        raise Exception("deploy fail")
-    print("done~")
-    print(repo)
+#     cmd_str = "cd " + os.path.join(os.path.dirname(os.path.abspath(__file__)), 'repo') + " && bundle install && ./deploy.sh"
+#     print(cmd_str)
+#     r = os.system(cmd_str)
+#     if r != 0:
+#         raise Exception("deploy fail")
+#     print("done~")
+    print(repo.repo_name)
+    print(repo.name)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
