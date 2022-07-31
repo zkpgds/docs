@@ -1,6 +1,11 @@
 name: Deploy  Docs
 
 on:
+  workflow_dispatch:
+  issues:
+    types: [ opened, edited ]
+  issue_comment:
+    types: [ created, edited ]
   push:
     branches:
       - v1_cn
