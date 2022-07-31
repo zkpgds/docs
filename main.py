@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
+import argparse
 import os
 import time
 import datetime
 import shutil
-import argparse
 
 from github import Github
 
