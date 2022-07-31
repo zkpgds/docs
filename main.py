@@ -26,7 +26,7 @@ def get_repo(user: Github, repo: str):
     return user.get_repo(repo)
 
 
-def main(token, repo_name, self):
+def main(token, repo_name):
     print("===============")
     print(token)
     print(repo_name)
