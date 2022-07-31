@@ -31,6 +31,11 @@ def main(token, repo_name):
     user = login(token)
     me = get_me(user)
     repo = get_repo(user, repo_name)
+    cmd_str = "cd " + os.path.join(self.base_path, 'repo') + " && bundle install && ./deploy.sh"
+    print(cmd_str)
+    r = os.system(cmd_str)
+    if r != 0:
+        raise Exception("deploy fail")
     print("done~")
     print(repo)
 
