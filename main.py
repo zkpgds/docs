@@ -11,6 +11,9 @@ print("-" * 50)
 print("now: ", datetime.datetime.now().strftime('%Y-%M-%d %H:%M:%S'))
 print("-" * 50)
 
+def __init__(self):
+    self.base_path = os.path.dirname(os.path.abspath(__file__))
+
 def get_me(user):
     return user.get_user().login
 
@@ -23,7 +26,7 @@ def get_repo(user: Github, repo: str):
     return user.get_repo(repo)
 
 
-def main(token, repo_name):
+def main(token, repo_name, self):
     print("===============")
     print(token)
     print(repo_name)
